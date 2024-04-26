@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/static/index.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body>
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Poppins:wght@300;400;700&display=swap');
+   </style>
+   <div class="wrapper">
+      <!-- <div><a href="#">GatSy</a></div> -->
+      <div class="container">
+         <div class="ham"></div>
+         <div class="ham"></div>
+         <div class="ham"></div>
+      </div>
+   </div>
+   <div style="display:flex">
+
+      <ul class="menu">
+         <form method="post" action="http://localhost:8080/slogin">
+            <li><a href="login.html"><button type="submit">
+                     <p>Student Login</p>
+                  </button></a></li>
+         </form>
+
+         <form method="post" action="http://localhost:8080/ssignup">
+            <li><a href="ssignup.html"><button type="submit">
+                     <p>Student SignUp</p>
+                  </button></a></li>
+         </form>
+
+         <form method="post" action="http://localhost:8080/tlogin">
+            <li><a href="tlogin.html"><button type="submit">
+                     <p>Class Teacher</p>
+                  </button></a></li>
+         </form>
+
+         <form method="post" action="http://localhost:8080/hlogin">
+            <li><a href="hlogin.html"><button type="submit">
+                     <p>HOD</p>
+                  </button></a></li>
+         </form>
+
+         <form method="post" action="http://localhost:8080/glogin">
+            <li><a href="#"><button type="submit">
+                     <p>Gate Keeper</p>
+                  </button></a></li>
+         </form>
+      </ul>
+      <div style="margin-left: 50px; margin-top: 16%;">
+         <h2 class="header">Gate Pass Management System</h2>
+         <h4 style="text-align: center;font-style:normal;font-weight: 200;width: 400px;margin-left: 20%;">User friendly
+            application for issuing gate passes. Click the hamburger icon to login to our application.</h4>
+      </div>
+   </div>
+   <script>
+      var logo = document.querySelector('.container');
+      var menu = document.querySelector('.menu');
+
+      logo.addEventListener('click', function () {
+         menu.classList.toggle('showmenu');
+      });
+
+   </script>
+</body>
+
+</html>

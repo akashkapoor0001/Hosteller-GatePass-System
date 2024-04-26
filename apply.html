@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/apply.css">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span>APPLY FOR</span>
+                  <span>GATE PASS</span>
+                </div>
+              </div>
+            <form action="/filled" method="post">
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="NAME" type="text" name="name" id="name" required>
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="ROLL" type="text" name="roll" id="roll" required>
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="SECTION" type="text" name="section" id="section" required>
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="PHONE NO" type="text" name="phnum" id="phnum" required>
+                  </div>
+                  <div class="app-form-group date">
+                  <input class="app-form-control" type="date" name="date" placeholder='DATE' id="date" required>
+                   </div>
+                    <br><br>
+                  <div class="app-form-group message">
+                    <input class="app-form-control" placeholder="REASON" type="text" name="reason" id="reason" required>
+                  </div>
+                  <div class="app-form-group buttons">
+                    <button class="app-form-button">CANCEL</button>
+                    <button class="app-form-button" type="submit">SUBMIT</button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+    
+            </div>
+          </div>
+      </div>
+      
+</body>
+</html>
