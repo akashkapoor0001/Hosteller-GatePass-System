@@ -44,7 +44,7 @@ app.use(flash());
 // http://localhost:3000/
 app.get('/', function(request, response) {
 	// Render login template
-	response.sendFile(path.join(__dirname + 'http://localhost:8080/index.html'));
+	response.sendFile(path.join(__dirname + '/index.html'));
 });
 
 // http://localhost:3000/slogin
@@ -56,6 +56,7 @@ app.post('/slogin', function(request, response) {
 // http://localhost:3000/auth
 app.post('/sauth', function(request, response) {
 	// Capture the input fields
+// sourcery skip: use-object-destructuring
 	let username = request.body.username;
 	let password = request.body.password;
 	// Ensure the input fields exists and are not empty
@@ -93,6 +94,7 @@ app.post('/ssignup', function(request, response) {
 // http://localhost:3000/register
 app.post('/register', function(request, response) {
 	// Capture the input fields
+// sourcery skip: use-object-destructuring
 	let username = request.body.username;
 	let password = request.body.password;
     let confirm_password = request.body.confirm_password;
@@ -103,6 +105,7 @@ app.post('/register', function(request, response) {
 		// Execute SQL query that'll select the account from the database based on the specified username and password
 		connection.query('SELECT * FROM student WHERE user = ?', [username], function(error, results, fields) {
 			// If there is an issue with the query, output the error
+// sourcery skip: use-braces
 			if (error) throw error;
 			// If the account exists
 			if (results.length > 0) {
@@ -152,6 +155,7 @@ app.get('/alreadyexists', function(request, response) {
 // http://localhost:3000/tauth
 app.post('/tauth', function(request, response) {
 	// Capture the input fields
+// sourcery skip: use-object-destructuring
 	let username = request.body.username;
 	let password = request.body.password;
 	// Ensure the input fields exists and are not empty
@@ -182,6 +186,7 @@ app.post('/hlogin', function(request, response) {
 // http://localhost:3000/hauth
 app.post('/hauth', function(request, response) {
 	// Capture the input fields
+// sourcery skip: use-object-destructuring
 	let username = request.body.username;
 	let password = request.body.password;
 	// Ensure the input fields exists and are not empty
@@ -212,6 +217,7 @@ app.post('/glogin', function(request, response) {
 // http://localhost:3000/gauth
 app.post('/gauth', function(request, response) {
 	// Capture the input fields
+// sourcery skip: use-object-destructuring
 	let username = request.body.username;
 	let password = request.body.password;
 	// Ensure the input fields exists and are not empty

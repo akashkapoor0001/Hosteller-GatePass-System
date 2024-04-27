@@ -12,6 +12,8 @@ body{
 .header{
     font-size: 42px;
     margin-bottom: 3%;
+    margin-left: 160px;
+    text-align: right;
 }
 
 a{
