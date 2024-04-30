@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>STATUS</title>
@@ -17,9 +17,6 @@
 </head>
 
 <body>  
-<!--   <% if (messages.error) { %>
-  <p style="color:red"><%- messages.error %></p>
-<% } %> -->
   
 <br>
 
@@ -57,5 +54,109 @@
     <% } %> 
   </tbody>
 </table>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STATUS</title>
+  <style>
+    body {
+        background: linear-gradient(45deg, #D7E2E9, #AB95B1, #C9BEB5, #F1D05D);
+    }
+    html {
+        height: 100%;
+    }
+    table {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        width: 80%;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    #qrcode-container {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #qrcode-heading {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    #qrcode-text {
+        font-size: 18px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    #qrcode {
+        margin-top: 10px;
+    }
+    #no-data-row {
+        text-align: center;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>  
+
+<br>
+
+<table class="table">
+  <thead></thead>
+  <tbody>
+    <% if(data.length > 0) { %>
+      <% for(var i = 0; i < data.length; i++) { %>  
+        <tr>
+          <th scope="row"><%= (i+1) %></th>
+          <td><%= data[i].roll %></td>
+          <td><%= data[i].name %></td>
+          <td><%= data[i].class %></td>
+          <td><%= data[i].date %></td>
+          <td><%= data[i].reason %></td>
+          <td id="status"><%= data[i].status ? data[i].status : "Status not available" %></td>
+          <td><%= data[i].phnum %></td>
+        </tr>
+      <% } %>
+    <% } else { %>
+      <tr id="no-data-row">
+        <td colspan="8">
+          <button class="btn btn-danger" onclick="showInformation()">View Receipt</button>
+          <div id="qrcode-container">
+            <div id="qrcode-heading"><strong>QR CODE</strong></div>
+            <div id="qrcode"></div>
+            <div id="qrcode-text"><strong>GatePass QR receipt is generated</strong></div>
+          </div>
+        </td>
+      </tr>
+    <% } %> 
+  </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<script>
+  function showInformation() {
+    const qrCodeContainer = document.getElementById('qrcode');
+    qrCodeContainer.innerHTML = ''; // Clear previous QR code
+    const qrText = "GatePass ID : 223fdf235df5f00rte\nUID: 21bcs7554\nStatus: Approved";
+    const qr = new QRCode(qrCodeContainer, {
+        text: qrText,
+        width: 200,
+        height: 200
+    });
+  }
+</script>
+
 </body>
 </html>

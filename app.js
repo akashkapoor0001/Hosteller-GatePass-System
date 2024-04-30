@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
+const QRCode = require('qrcode');
 
 flash = require('express-flash')
 
@@ -462,6 +463,29 @@ app.post('/updategate', function(request, response) {
 	//response.render(__dirname+"/updated.html");
 	
 });
+
+
+
+// app.post('/updategate', function(request, response) {
+// 	var auto = request.body.out;
+  
+// 	// Update the gatepass status in the database
+// 	var sql = 'UPDATE gatepass SET status = ?, outtime = CURRENT_TIMESTAMP WHERE auto = ?';
+// 	connection.query(sql, ['issuefinish', auto], function(error, results) {
+// 	  if (error) {
+// 		// Handle error appropriately (e.g., render an error page)
+// 		console.error('Error updating gatepass status:', error);
+// 		response.render('error', { error: 'Failed to update gatepass status' });
+// 	  } else {
+// 		// Retrieve the updated status from the database
+// 		var updatedStatus = 'issuefinish'; // Assuming 'issuefinish' is the updated status
+// 		// Render the new HTML file with the updated status
+// 		response.render(__dirname+ "/gatepass-status.ejs", { status: updatedStatus });
+// 	  }
+// 	});
+//   });
+
+
 //port number
 app.listen(8080, () => {
 	console.log('Server is running on http://localhost:8080');

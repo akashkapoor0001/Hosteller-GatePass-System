@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gatepass Request Status</title>
+  <!-- Add your CSS styles here -->
+  <style>
+    body{
+       background:linear-gradient(45deg,#D7E2E9,#AB95B1,#C9BEB5,#F1D05D);
+   }
+   html{
+       height: 100%;
+   }
+      
+ </style>
+</head>
+<body>
+  <!-- Display success message if any -->
+  <% if (messages.success) { %>
+    <p class="alert alert-success mt-4"><%- messages.success %></p>
+  <% } %>
+
+  <!-- Add a button to navigate back to the gatepass request list -->
+  <form action="/ghome" method="get">
+    <button type="submit" class="home">← HOME</button>
+  </form>
+
+  <!-- Display the updated status of the gatepass request -->
+  <div>
+    <h3>Gatepass Request Status</h3>
+    <p>Status: <%= Status %></p>
+  </div>
+</body>
+</html>
